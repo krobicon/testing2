@@ -7,6 +7,7 @@ struct LocalPlayer {
     bool inAttack;
     bool inZoom;
     bool inJump;
+    float time;
     FloatVector3D localOrigin;
     FloatVector2D viewAngles;
     FloatVector2D punchAngles;
@@ -29,6 +30,7 @@ struct LocalPlayer {
         inJump = mem::Read<bool>(OFF_REGION + OFF_IN_JUMP) > 0;
         localOrigin = mem::Read<FloatVector3D>(base + OFF_LOCAL_ORIGIN);
         viewAngles = mem::Read<FloatVector2D>(base + OFF_VIEW_ANGLES);
+        time = mem::Read<float>(base + OFF_TIME);
         punchAngles = mem::Read<FloatVector2D>(base + OFF_PUNCH_ANGLES);
         punchAnglesDiff = punchAnglesPrev.subtract(punchAngles);
         punchAnglesPrev = punchAngles;
