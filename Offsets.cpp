@@ -25,8 +25,8 @@ constexpr long OFF_BLEEDOUT_STATE = 0x2710;                   //[RecvTable.DT_Pl
 constexpr long OFF_LAST_VISIBLE_TIME = 0x19bd + 0x3;          //[RecvTable.DT_BaseCombatCharacter]->m_hudInfo_visibilityTestAlwaysPasses + 0x3
 constexpr long OFF_LAST_AIMEDAT_TIME = 0x19bd + 0x3 + 0x8;    //[RecvTable.DT_BaseCombatCharacter]->m_hudInfo_visibilityTestAlwaysPasses + 0x3 + 0x8
 constexpr long OFF_TIME = 0x20b8;                             //[DataMap.C_Player]-> m_currentFramePlayer.timeBase
-constexpr long OFF_WALLRUN_START = 0x3594;                    //[DataMap.C_Player]-> m_wallRunStartTime
-constexpr long OFF_WALLRUN_CLEAR = 0x3598;                    //[DataMap.C_Player]-> m_wallRunClearTime
+constexpr long OFF_WALLRUNSTART = 0x3594;                     //[DataMap.C_Player]-> m_wallRunStartTime
+constexpr long OFF_WALLRUNCLEAR = 0x3598;                     //[DataMap.C_Player]-> m_wallRunClearTime
 constexpr long OFF_VIEW_ANGLES = 0x2564 - 0x14;               //[DataMap.C_Player]-> m_ammoPoolCapacity - 0x14
 constexpr long OFF_PUNCH_ANGLES = 0x2468;                     //[?]->m_currentFrameLocalPlayer.m_vecPunchWeapon_Angle
 //weapon
