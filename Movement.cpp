@@ -18,3 +18,4 @@ struct Movement {
         if (!localplayer->isGrounded())
             printf("not grounded... \n");
     }
+};
