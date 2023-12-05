@@ -7,6 +7,7 @@ struct LocalPlayer {
     bool inAttack;
     bool inZoom;
     bool inJump;
+    bool inSkydive;
     float localTime;
     float wallrunStart;
     float wallrunClear;
@@ -30,6 +31,7 @@ struct LocalPlayer {
         teamNumber = mem::Read<int>(base + OFF_TEAM_NUMBER);
         inAttack = mem::Read<bool>(OFF_REGION + OFF_IN_ATTACK) > 0;
         inJump = mem::Read<bool>(OFF_REGION + OFF_IN_JUMP) > 0;
+        inSkydive = mem::Read<short>(base + OFF_SKYDIVESTATE) > 0;
         localOrigin = mem::Read<FloatVector3D>(base + OFF_LOCAL_ORIGIN);
         viewAngles = mem::Read<FloatVector2D>(base + OFF_VIEW_ANGLES);
         localTime = mem::Read<float>(base + OFF_TIME);
@@ -58,9 +60,15 @@ struct LocalPlayer {
     }
 
     bool isClimbing() {
+        if (base == 0) return false;
         return wallrunStart > wallrunClear;
     }
-
+    bool isGrounded() {
+        if (base == 0) return false;
+        long flags = mem::Read<long>(base + OFF_FLAGS);
+        uint32_t result = mem::Read<Uint32>(flags);
+        return (result & 0x1) != 0;
+    }
     void lookAt(FloatVector2D angles) {
         mem::Write<FloatVector2D>(base + OFF_VIEW_ANGLES, angles.clamp());
     }
