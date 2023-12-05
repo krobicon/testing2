@@ -8,6 +8,8 @@ struct LocalPlayer {
     bool inZoom;
     bool inJump;
     float localTime;
+    float wallrunStart;
+    float wallrunClear;
     FloatVector3D localOrigin;
     FloatVector2D viewAngles;
     FloatVector2D punchAngles;
@@ -31,6 +33,8 @@ struct LocalPlayer {
         localOrigin = mem::Read<FloatVector3D>(base + OFF_LOCAL_ORIGIN);
         viewAngles = mem::Read<FloatVector2D>(base + OFF_VIEW_ANGLES);
         localTime = mem::Read<float>(base + OFF_TIME);
+        wallrunStart = mem::Read<float>(base + OFF_WALLRUNSTART);
+        wallrunClear = mem::Read<float>(base + OFF_WALLRUNCLEAR);
         punchAngles = mem::Read<FloatVector2D>(base + OFF_PUNCH_ANGLES);
         punchAnglesDiff = punchAnglesPrev.subtract(punchAngles);
         punchAnglesPrev = punchAngles;
@@ -51,6 +55,10 @@ struct LocalPlayer {
         if (dead) return false;
         if (knocked) return false;
         return true;
+    }
+
+    bool isClimbing() {
+        return wallrunStart > wallrunClear;
     }
 
     void lookAt(FloatVector2D angles) {
