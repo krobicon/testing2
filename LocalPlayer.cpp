@@ -65,8 +65,8 @@ struct LocalPlayer {
     }
     bool isGrounded() {
         if (base == 0) return false;
-        long flags = mem::Read<long>(base + OFF_FLAGS);
-        uint32_t result = mem::Read<uint32_t>(flags);
+        //long flags = mem::Read<long>(base + OFF_FLAGS);
+        uint32_t result = mem::Read<uint32_t>(base + OFF_FLAGS);
         return (result & 0x1) != 0;
     }
     void lookAt(FloatVector2D angles) {
