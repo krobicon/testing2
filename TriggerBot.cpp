@@ -5,8 +5,8 @@ struct TriggerBot {
     Level* level;
     LocalPlayer* localPlayer;
     std::vector<Player*>* players;
-    const float TB_MAX_RANGE_ZOOMED = util::metersToGameUnits(100);
-    const float TB_MAX_RANGE_HIPFRE = util::metersToGameUnits(10);
+    const float TB_MAX_RANGE_ZOOMED = util::metersToGameUnits(20);
+    const float TB_MAX_RANGE_HIPFRE = util::metersToGameUnits(12);
 
     TriggerBot(ConfigLoader* cl, XDisplay* display, Level* level, LocalPlayer* localPlayer, std::vector<Player*>* players) {
         this->cl = cl;
@@ -34,10 +34,10 @@ struct TriggerBot {
             weaponId != WEAPON_LONGBOW &&
             weaponId != WEAPON_SENTINEL &&
             weaponId != WEAPON_G7 &&
-            weaponId != WEAPON_HEMLOCK &&
+            //weaponId != WEAPON_HEMLOCK &&
             weaponId != WEAPON_3030 &&
-            weaponId != WEAPON_TRIPLE_TAKE &&
-            weaponId != WEAPON_NEMESIS
+            weaponId != WEAPON_TRIPLE_TAKE
+            //weaponId != WEAPON_NEMESIS
             )return;
 
         //max range changes based on if we are zoomed in or not
