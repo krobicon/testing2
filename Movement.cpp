@@ -15,5 +15,5 @@ struct Movement {
     }
 
     void autoTapstrafe() {
-
+    }
 };
