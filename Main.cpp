@@ -25,7 +25,7 @@ int main() {
     AimBot* aimBot = new AimBot(cl, display, level, localPlayer, players);
     TriggerBot* triggerBot = new TriggerBot(cl, display, level, localPlayer, players);
     Sense* sense = new Sense(cl, display, level, localPlayer, players);
-    Movement* movement = new Momement(cl, display, level, localPlayer);
+    Movement* movement = new Movement(cl, display, level, localPlayer);
 
     //begin main loop
     int counter = 0;
