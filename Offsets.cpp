@@ -29,6 +29,8 @@ constexpr long OFF_WALLRUNSTART = 0x3594;                     //[DataMap.C_Playe
 constexpr long OFF_WALLRUNCLEAR = 0x3598;                     //[DataMap.C_Player]-> m_wallRunClearTime
 constexpr long OFF_VIEW_ANGLES = 0x2564 - 0x14;               //[DataMap.C_Player]-> m_ammoPoolCapacity - 0x14
 constexpr long OFF_PUNCH_ANGLES = 0x2468;                     //[?]->m_currentFrameLocalPlayer.m_vecPunchWeapon_Angle
+constexpr long OFF_FLAGS = 0x00c8;                            // [RecvTable.DT_Player]-> m_fFlags
+constexpr long OFF_SKYDIVESTATE = 0x4690;                     // [RecvTable.DT_Player]-> m_skydiveState
 //weapon
 constexpr long OFF_WEAPON_HANDLE = 0x1964;                    //[RecvTable.DT_Player]->m_latestPrimaryWeapons
 constexpr long OFF_WEAPON_INDEX = 0x17a8;                     //[RecvTable.DT_WeaponX]->m_weaponNameIndex
