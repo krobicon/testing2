@@ -29,8 +29,8 @@ public:
     }
 
     void pressW() {
-        XTestFakeKeyEvent(display, W, True, 0)
-        XTestFakeKeyEvent(display, W, False, 0)
+        XTestFakeKeyEvent(display, 0x0077, True, 0)
+        XTestFakeKeyEvent(display, 0x0077, False, 0)
         XFlush(display);
     }
 
