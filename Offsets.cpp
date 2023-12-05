@@ -11,6 +11,10 @@ constexpr long OFF_ENTITY_LIST = 0x1d6b5d8;                   //[Miscellaneous]-
 //buttons
 constexpr long OFF_IN_ATTACK = 0x07383af0;                     //[Buttons]->in_attack
 constexpr long OFF_IN_JUMP = 0x07383bf0;                       //[Buttons]->in_jump
+constexpr long OFF_IN_FORWARD = 0x0738b1d0;                       //[Buttons]->in_forward
+constexpr long OFF_IN_BACKWARD = 0x0738b1f8;                       //[Buttons]->in_backward\
+constexpr long OFF_IN_DUCK = 0x0738b190;                       //[Buttons]->in_duck
+
     
 // player
 constexpr long OFF_ZOOMING = 0x1c01;                          //[RecvTable.DT_Player]->m_bZooming
