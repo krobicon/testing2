@@ -28,6 +28,12 @@ public:
         XFlush(display);
     }
 
+    void pressW() {
+        XTestFakeKeyEvent(display, W, True, 0)
+        XTestFakeKeyEvent(display, W, False, 0)
+        XFlush(display);
+    }
+
     bool isLeftMouseButtonDown() {
         Window root, child;
         int root_x, root_y, win_x, win_y;
