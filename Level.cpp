@@ -20,7 +20,7 @@ struct Level {
 	        std::string result = mem::ReadString(gamemodePointer, 1024);
 	        return result;
 	    }
-	    bool isSpecialMode()
+	bool isSpecialMode()
 	    {
 	        if (getGamemode().compare("control") == 0 || getGamemode().compare("freedm") == 0)
 	            return true;
