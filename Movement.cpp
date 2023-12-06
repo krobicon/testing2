@@ -54,6 +54,7 @@ struct Movement {
     			}
     			else {
     				localPlayer->setForwardState(4);
+                    printf("Forward State set:[%d] \n", 4);
     			}
     		}
     		strafeTick++;
