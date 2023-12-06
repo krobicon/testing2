@@ -43,7 +43,6 @@ struct Movement {
     	// auto tap trafe
     	if (!localPlayer->isGrounded() && !localPlayer->inSkydive && !longclimb && !localPlayer->inBackward)
     	{
-            printf("tap tap \n");
     		if (jumpstart == false) {
     			jumpstart = true;
     			strafeTick = 0;
@@ -51,7 +50,7 @@ struct Movement {
     		else if ((localPlayer->inDuck && localPlayer->jumpDown != 65) || (strafeTick > 7 && strafeTick < 125 && localPlayer->forwardDown == 33)) { //previously 33
     			if (localPlayer->forwardState == 0) {
     				localPlayer->setForwardState(5);
-    				//printf("Forward State set:[%d] \n", m_localPlayer->getForwardState());
+    				printf("Forward State set:[%d] \n", 5);
     			}
     			else {
     				localPlayer->setForwardState(4);
