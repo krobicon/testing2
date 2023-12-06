@@ -19,7 +19,7 @@ public:
 
     bool keyDown(std::string XK_keyName) {
         KeySym keyCode = XStringToKeysym(trimXKPrefix(XK_keyName).c_str());
-        printf(keycode);
+        printf(keyCode);
         return keyDown(keyCode);
     }
 
