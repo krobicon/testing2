@@ -14,7 +14,7 @@ all: rebuild;
 
 # Clean up object files and the executable
 clean:
-	rm -f a.out
+	rm -f ksenz
 
 # Compilation and linking
 a.out: $(SRCS)
@@ -24,6 +24,6 @@ a.out: $(SRCS)
 # clean & build
 rebuild:
 	@$(MAKE) clean
-	@$(MAKE) a.out
+	@$(MAKE) ksenz
 	echo "SUCCESS!"
 
