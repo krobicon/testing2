@@ -49,7 +49,7 @@ struct Movement {
                 display->releaseW();
                 wDown = false;
             }*/
-        }
+        //}
         /*if (display->keyDown("XK_w")){
             printf("w.. \n");
         }*/
