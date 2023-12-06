@@ -33,11 +33,12 @@ struct Movement {
     		auto climbTime = localPlayer->localTime - localPlayer->wallrunStart;
     		if (climbTime > 0.8) {
     			longclimb = true;
+                if (longclimb)
+                printf("longggg climb \n");
     			return;	
     		}
     	}
-        if (longclimb)
-            printf("longggg climb \n");
+        
         //if (!localPlayer->isGrounded() && counter%10 == 0) {
             //printf("grounded.. \n");
             //display->pressW();
