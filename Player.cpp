@@ -120,8 +120,8 @@ struct Player {
 
     void glow() {
         if (glowEnable != 1) mem::Write<int>(base + OFF_GLOW_ENABLE, 1);
-        if (glowThroughWall != 2) mem::Write<int>(base + OFF_GLOW_THROUGH_WALL, 2);
-        if (glowThroughWall != 2) mem::Write<int>(base + OFF_GLOW_FIX, 2);
+        //if (glowThroughWall != 2) mem::Write<int>(base + OFF_GLOW_THROUGH_WALL, 2);
+        //if (glowThroughWall != 2) mem::Write<int>(base + OFF_GLOW_FIX, 2);
         int id = (visible) ? 0 : 1;
         if (aimbotLocked) id = 2;
         if (highlightId != id) mem::Write<int>(base + OFF_GLOW_HIGHLIGHT_ID + 1, id);
