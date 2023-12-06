@@ -4,7 +4,7 @@ struct Movement {
     XDisplay* display;
     Level* level;
     LocalPlayer* localPlayer;
-    int i = 0;
+    int i = 1;
 
     bool wDown = false;
 
