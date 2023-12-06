@@ -156,8 +156,8 @@ struct Sense {
                 if (cl->SENSE_ENEMY_COLOR_SHIELD_BASED) p->glowShieldBased();
                 else p->glow();
             }
-            else
-                p->glowFriendly();
+            //else
+                //p->glowFriendly();
         }
     }
 
