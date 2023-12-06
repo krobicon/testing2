@@ -15,7 +15,7 @@ struct Movement {
     }
 
     void autoTapstrafe(int counter) {
-        if (localPlayer->isGrounded() && counter%100 == 0) {
+        if (localPlayer->isGrounded() && counter%300 == 0) {
             printf("not grounded.. \n");
             display->pressW();
             /*if (!wDown) {
