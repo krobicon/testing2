@@ -37,11 +37,11 @@ struct Movement {
     		}
     	}
     	if (longclimb) {
-    		if (localPlayer->localTime > localPlayer->wallrunClear() + 0.1)
+    		if (localPlayer->localTime > localPlayer->wallrunClear + 0.1)
     			longclimb = false;
     	}
     	// auto tap trafe
-    	if (!localPlayer->isGrounded() && !localPlayer->isSkydiving() && !longclimb && !localPlayer->inBackward)
+    	if (!localPlayer->isGrounded() && !localPlayer->inSkydive && !longclimb && !localPlayer->inBackward)
     	{
     		if (jumpstart == false) {
     			jumpstart = true;
