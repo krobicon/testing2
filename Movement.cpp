@@ -15,13 +15,13 @@ struct Movement {
     }
 
     void autoTapstrafe(int counter) {
-        /*if (!localPlayer->isGrounded() && counter%10 == 0) {
+        if (localPlayer->isGrounded() && counter%100 == 0) {
             printf("not grounded.. \n");
-            display->pressW();
-        } */
-        if (display->keyDown("XK_w")){
-            printf("w.. \n");
+            //display->pressW();
         }
+        /*if (display->keyDown("XK_w")){
+            printf("w.. \n");
+        }*/
         //bool keyDown(std::string XK_keyName) {
         //KeySym keyCode = XStringToKeysym(trimXKPrefix(XK_keyName).c_str());
         //return keyDown(keyCode);
