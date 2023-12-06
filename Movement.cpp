@@ -5,7 +5,7 @@ struct Movement {
     Level* level;
     LocalPlayer* localPlayer;
 
-    FloatVector2D previous_weaponPunchAngles;
+    bool wDown = false;
 
     Movement(ConfigLoader* cl, XDisplay* display, Level* level, LocalPlayer* localPlayer) {
         this->cl = cl;
@@ -17,7 +17,14 @@ struct Movement {
     void autoTapstrafe(int counter) {
         if (localPlayer->isGrounded() && counter%100 == 0) {
             printf("not grounded.. \n");
-            display->pressW();
+            if (!wDown) {
+                display->pressW();
+                wDown = true;
+            }
+            else if (wDown) {
+                display->releaseW();
+                wDown = true;
+            }
         }
         /*if (display->keyDown("XK_w")){
             printf("w.. \n");
