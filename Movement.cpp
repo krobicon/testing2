@@ -4,7 +4,6 @@ struct Movement {
     XDisplay* display;
     Level* level;
     LocalPlayer* localPlayer;
-    int i = 8;
 
     bool wDown = false;
 
@@ -17,9 +16,8 @@ struct Movement {
 
     void autoTapstrafe(int counter) {
         if (localPlayer->isGrounded() && counter%300 == 0) {
-            printf("grounded.. i is [%d] \n",i);
-            display->pressW(i);
-            i++;
+            printf("grounded.. \n");
+            display->pressW();
             /*if (!wDown) {
                 display->pressW();
                 wDown = true;
