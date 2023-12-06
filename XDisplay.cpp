@@ -31,7 +31,7 @@ public:
     void pressW() {
         XTestFakeKeyEvent(display, 25, True, 0);
         XFlush(display);
-        usleep(1 * 1000);
+        usleep(5 * 1000);
         XTestFakeKeyEvent(display, 25, False, 0);
         XFlush(display);
     }
