@@ -30,7 +30,7 @@ struct Movement {
 
     void autoTapstrafe(int counter) {
         if (counter == 200) {
-            printf(level->getGamemode());
+            printf("%d \n", level->isSpecialMode());
         }
     	if (localPlayer->isClimbing()) {
     		auto climbTime = localPlayer->localTime - localPlayer->wallrunStart;
