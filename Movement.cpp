@@ -50,11 +50,11 @@ struct Movement {
     		else if ((localPlayer->inDuck && localPlayer->jumpDown != 65) || (strafeTick > 7 && strafeTick < 125 && localPlayer->forwardDown == 33)) { //previously 33
     			if (localPlayer->forwardState == 0) {
     				localPlayer->setForwardState(5);
-    				printf("Forward State set:[%d] \n", 5);
+    				//printf("Forward State set:[%d] \n", 5);
     			}
     			else {
     				localPlayer->setForwardState(4);
-                    printf("Forward State set:[%d] \n", 4);
+                    //printf("Forward State set:[%d] \n", 4);
     			}
     		}
     		strafeTick++;
