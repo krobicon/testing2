@@ -38,7 +38,7 @@ struct Sense {
             if (oldColor != newColor)
                 mem::Write<Color>(highlightSettingsPtr + (highlightSize * highlightId) + 8, newColor);
         }
-        { //player highlight - invisible
+        /*{ //player highlight - invisible
             int highlightId = 1;
             const GlowMode newGlowMode = {
                 cl->SENSE_ENEMY_INVISIBLE_BODY_STYLE,
@@ -57,7 +57,7 @@ struct Sense {
             const Color oldColor = mem::Read<Color>(highlightSettingsPtr + (highlightSize * highlightId) + 8);
             if (oldColor != newColor)
                 mem::Write<Color>(highlightSettingsPtr + (highlightSize * highlightId) + 8, newColor);
-        }
+        }*/
         { //player highlight - aimbot locked
             int highlightId = 2;
             const GlowMode newGlowMode = {
