@@ -29,15 +29,15 @@ struct Movement {
     }
 
     void autoTapstrafe(int counter) {
-    	if (m_localPlayer->isClimbing()) {
-    		auto climbTime = time - m_localPlayer->getWallrunStart();
+    	if (localPlayer->isClimbing()) {
+    		auto climbTime = localPlayer->localTime - localPlayer->wallrunStart;
     		if (climbTime > 0.8) {
     			longclimb = true;
     			return;	
     		}
     	}
     	if (longclimb) {
-    		if (time > m_localPlayer->getWallrunClear() + 0.1)
+    		if (localPlayer->localTime > localPlayer->wallrunClear() + 0.1)
     			longclimb = false;
     	}
     	// auto tap trafe
