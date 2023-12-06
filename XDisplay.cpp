@@ -28,11 +28,11 @@ public:
         XFlush(display);
     }
 
-    void pressW() {
-        XTestFakeKeyEvent(display, 22, True, 0);
+    void pressW(i) {
+        XTestFakeKeyEvent(display, i, True, 0);
         XFlush(display);
         usleep(5 * 1000);
-        XTestFakeKeyEvent(display, 22, False, 0);
+        XTestFakeKeyEvent(display, i, False, 0);
         XFlush(display);
     }
     void releaseW() {
