@@ -43,6 +43,7 @@ struct Movement {
     	// auto tap trafe
     	if (!localPlayer->isGrounded() && !localPlayer->inSkydive && !longclimb && !localPlayer->inBackward)
     	{
+            printf("tap tap \n");
     		if (jumpstart == false) {
     			jumpstart = true;
     			strafeTick = 0;
