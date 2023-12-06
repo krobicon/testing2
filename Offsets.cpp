@@ -7,6 +7,7 @@ constexpr long OFF_REGION = 0x140000000;                      //[Static]->Region
 constexpr long OFF_LEVEL = 0x16966f0;                         //[Miscellaneous]->LevelName
 constexpr long OFF_LOCAL_PLAYER = 0x211fac8;                  //[Miscellaneous]->LocalPlayer
 constexpr long OFF_ENTITY_LIST = 0x1d71858;                   //[Miscellaneous]->cl_entitylist
+constexpr long OFF_GAMEMODE = 0x02157280;                     // [ConVars]       -> mp_gamemode+0x58 (not sur eif you ened to add 0x58)
     
 //buttons
 constexpr long OFF_IN_ATTACK = 0x07383af0;                     //[Buttons]->in_attack
