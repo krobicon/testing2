@@ -7,7 +7,12 @@ struct LocalPlayer {
     bool inAttack;
     bool inZoom;
     bool inJump;
+    bool inBackward;
     bool inSkydive;
+    bool inDuck;
+    int jumpDown;
+    int forwardDown;
+    int forwardState;
     float localTime;
     float wallrunStart;
     float wallrunClear;
@@ -32,6 +37,9 @@ struct LocalPlayer {
         inAttack = mem::Read<bool>(OFF_REGION + OFF_IN_ATTACK) > 0;
         inJump = mem::Read<bool>(OFF_REGION + OFF_IN_JUMP) > 0;
         inBackward = mem::Read<bool>(OFF_REGION + OFF_IN_BACKWARD) > 0;
+        jumpDown = mem::Read<int>(OFF_REGION + OFF_IN_JUMP);
+        forwardDown = mem::Read<int>(OFF_REGION + OFF_IN_FORWARD);
+        forwardState = mem::Read<int>(OFF_REGION + OFF_IN_FORWARD + 0x8);
         inSkydive = mem::Read<short>(base + OFF_SKYDIVESTATE) > 0;
         inDuck = mem::Read<short>(base + OFF_DUCKSTATE) > 0;
         localOrigin = mem::Read<FloatVector3D>(base + OFF_LOCAL_ORIGIN);
@@ -70,6 +78,9 @@ struct LocalPlayer {
         //long flags = mem::Read<long>(base + OFF_FLAGS);
         uint32_t result = mem::Read<uint32_t>(base + OFF_FLAGS);
         return (result & 0x1) != 0;
+    }
+    void setForwardState(int state) {
+        mem::Write<int>(OFF_REGION + OFF_IN_FORWARD + 0x8, state);
     }
     void lookAt(FloatVector2D angles) {
         mem::Write<FloatVector2D>(base + OFF_VIEW_ANGLES, angles.clamp());
