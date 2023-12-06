@@ -17,7 +17,7 @@ clean:
 	rm -f ksenz
 
 # Compilation and linking
-a.out: $(SRCS)
+ksenz: $(SRCS)
 	$(CXX) $^ -o $@ $(LIBS)
 
 
