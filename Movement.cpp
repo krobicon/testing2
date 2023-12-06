@@ -17,14 +17,14 @@ struct Movement {
     void autoTapstrafe(int counter) {
         if (localPlayer->isGrounded() && counter%100 == 0) {
             printf("not grounded.. \n");
-            if (!wDown) {
+            /*if (!wDown) {
                 display->pressW();
                 wDown = true;
             }
             else if (wDown) {
                 display->releaseW();
                 wDown = false;
-            }
+            }*/
         }
         /*if (display->keyDown("XK_w")){
             printf("w.. \n");
