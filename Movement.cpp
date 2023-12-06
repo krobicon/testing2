@@ -30,14 +30,13 @@ struct Movement {
 
     void autoTapstrafe(int counter) {
     	if (localPlayer->isClimbing()) {
-            printf("climb \n");
-    		/*auto climbTime = localPlayer->localTime - localPlayer->wallrunStart;
+    		auto climbTime = localPlayer->localTime - localPlayer->wallrunStart;
     		if (climbTime > 0.8) {
     			longclimb = true;
                 if (longclimb)
                 printf("longggg climb \n");
     			return;	
-    		}*/
+    		}
     	}
         
         //if (!localPlayer->isGrounded() && counter%10 == 0) {
