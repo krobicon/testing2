@@ -29,16 +29,45 @@ struct Movement {
     }
 
     void autoTapstrafe(int counter) {
-    	if (localPlayer->isClimbing()) {
-    		auto climbTime = localPlayer->localTime - localPlayer->wallrunStart;
+    	if (m_localPlayer->isClimbing()) {
+    		auto climbTime = time - m_localPlayer->getWallrunStart();
     		if (climbTime > 0.8) {
     			longclimb = true;
-                if (longclimb)
-                printf("longggg climb \n");
     			return;	
     		}
     	}
-        
+    	if (longclimb) {
+    		if (time > m_localPlayer->getWallrunClear() + 0.1)
+    			longclimb = false;
+    	}
+    	// auto tap trafe
+    	if (!localPlayer->isGrounded() && !localPlayer->isSkydiving() && !longclimb && !localPlayer->getBackwardDown())
+    	{
+    		if (jumpstart == false) {
+    			jumpstart = true;
+    			strafeTick = 0;
+    		}
+    		else if ((localPlayer->isDucking() && localPlayer->getJumpDown() != 65) || (strafeTick > 7 && strafeTick < 125 && localPlayer->getForwardDown() == 33)) { //previously 33
+    			if (localPlayer->getForwardState() == 0) {
+    				localPlayer->setForwardState(5);
+    				//printf("Forward State set:[%d] \n", m_localPlayer->getForwardState());
+    			}
+    			else {
+    				localPlayer->setForwardState(4);
+    			}
+    		}
+    		strafeTick++;
+    	}        
+    	else if (jumpstart == true && localPlayer->isGrounded()) {
+    		jumpstart = false;
+    		strafeTick = 0;
+    		if (localPlayer->getForwardDown() == 0) {
+    			localPlayer->setForwardState(0);
+    		}
+    		else if (localPlayer->getForwardDown() == 33) {
+    			localPlayer->setForwardState(1);
+    		}
+    	}        
         //if (!localPlayer->isGrounded() && counter%10 == 0) {
             //printf("grounded.. \n");
             //display->pressW();
