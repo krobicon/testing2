@@ -41,14 +41,14 @@ struct Movement {
     			longclimb = false;
     	}
     	// auto tap trafe
-    	if (!localPlayer->isGrounded() && !localPlayer->isSkydiving() && !longclimb && !localPlayer->getBackwardDown())
+    	if (!localPlayer->isGrounded() && !localPlayer->isSkydiving() && !longclimb && !localPlayer->inBackward)
     	{
     		if (jumpstart == false) {
     			jumpstart = true;
     			strafeTick = 0;
     		}
-    		else if ((localPlayer->isDucking() && localPlayer->getJumpDown() != 65) || (strafeTick > 7 && strafeTick < 125 && localPlayer->getForwardDown() == 33)) { //previously 33
-    			if (localPlayer->getForwardState() == 0) {
+    		else if ((localPlayer->inDuck && localPlayer->jumpDown != 65) || (strafeTick > 7 && strafeTick < 125 && localPlayer->forwardDown == 33)) { //previously 33
+    			if (localPlayer->forwardState == 0) {
     				localPlayer->setForwardState(5);
     				//printf("Forward State set:[%d] \n", m_localPlayer->getForwardState());
     			}
@@ -61,10 +61,10 @@ struct Movement {
     	else if (jumpstart == true && localPlayer->isGrounded()) {
     		jumpstart = false;
     		strafeTick = 0;
-    		if (localPlayer->getForwardDown() == 0) {
+    		if (localPlayer->forwardDown == 0) {
     			localPlayer->setForwardState(0);
     		}
-    		else if (localPlayer->getForwardDown() == 33) {
+    		else if (localPlayer->forwardDown == 33) {
     			localPlayer->setForwardState(1);
     		}
     	}        
