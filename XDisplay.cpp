@@ -30,6 +30,7 @@ public:
 
     void pressW() {
         XTestFakeKeyEvent(display, 119, True, 0);
+        XTestFakeKeyEvent(display, 119, False, 100);
         XFlush(display);
     }
     void releaseW() {
