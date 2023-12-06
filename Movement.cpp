@@ -23,7 +23,7 @@ struct Movement {
             }
             else if (wDown) {
                 display->releaseW();
-                wDown = true;
+                wDown = false;
             }
         }
         /*if (display->keyDown("XK_w")){
