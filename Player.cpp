@@ -119,6 +119,10 @@ struct Player {
     }
 
     void glow() {
+        if (!visible) {
+            mem::Write<int>(base + OFF_GLOW_ENABLE, 0);
+            return;
+        }
         if (glowEnable != 1) mem::Write<int>(base + OFF_GLOW_ENABLE, 1);
         //if (glowThroughWall != 2) mem::Write<int>(base + OFF_GLOW_THROUGH_WALL, 2);
         //if (glowThroughWall != 2) mem::Write<int>(base + OFF_GLOW_FIX, 2);
